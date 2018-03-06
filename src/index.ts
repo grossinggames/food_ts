@@ -21,7 +21,11 @@ let menuNames: { [key: string]: string } = {
 	'desserts': 'Десерты',
 	'salads': 'Салаты',
 	'soups': 'Супы',
-	'shashlik': 'Шашлык'
+	'shashlik': 'Шашлык',
+	'vtoroe': 'Вторые блюда',
+	'garnir': 'Гарнир',
+	'deserti': 'Десерты',
+	'napitki': 'Напитки'
 };
 
 /* *************** Express Routes *************** */
@@ -31,10 +35,11 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/:organization', async (req, res) => {
-	console.log('req.organization: ', req.params.organization);
+	// console.log('req.organization: ', req.params.organization);
 
 	if (req.params.organization == 'favicon.ico') {
-		return console.log('stop.favicon');
+		// return console.log('stop.favicon');
+		return;
 	}
 
 	if (!req.params.organization) {
@@ -65,7 +70,7 @@ app.get('/:organization', async (req, res) => {
 				} else {
 					menuView += "<li>";
 				}
-				menuView += "<a href='?item=" + key + "' class='menu-item'>" + menuNames[key] + "</a></li>";
+				menuView += "<a href='?item=" + key + "' class='menu-item'>" + (menuNames[key] || key) + "</a></li>";
 
 			}
 
@@ -73,14 +78,7 @@ app.get('/:organization', async (req, res) => {
 			if (item == key) {
 				let nameImg = files[i].split('\\')[4];
 				let cardGroup = i;
-				// let cardGroupSize = cardGroup + 'size';
-				// let cardGroupWeight = cardGroup + 'weight';
-				// let size30 = '<span style="position: absolute; top: 10px; left: 10px;"><input name=' + cardGroupSize + ' type="radio" id="' + cardGroupSize + '1' + '" checked="checked" /><label for="' + cardGroupSize + '1' + '">30 см</label></span>';
-				// let size40 = '<span style="position: absolute; top: 43px; left: 10px;"><input name=' + cardGroupSize + ' type="radio" id="' + cardGroupSize + '2' + '" /><label for="' + cardGroupSize + '2' + '">40 см</label></span>';
-				// let weight300 = '<span style="position: absolute; top: 10px; left: 200px;"><input name=' + cardGroupWeight + ' type="radio" id="' + cardGroupWeight + '1' + '" checked="checked" /><label for="' + cardGroupWeight + '1' + '">300 гр</label></span>';
-				// let weight400 = '<span style="position: absolute; top: 43px; left: 200px;"><input name=' + cardGroupWeight + ' type="radio" id="' + cardGroupWeight + '2' + '" /><label for="' + cardGroupWeight + '2' + '">400 гр</label></span>';
-				// contentView += "<div class='food'><div class='col s12 m6'><div class='card'><div class='card-image'><img class='food-img' src='" + files[i].replace('public\\', '') + "'>" + size30 + size40 + weight300 + weight400 + "<span class='card-title' style='color: #2196f3'>" + /*files[i]*/ menuNames[key] + /*' <br>Файл: ' + nameImg +*/ "</span><a class='btn-floating btn-large halfway-fab waves-effect waves-light red'><i class='material-icons add-food'>add</i></a></div><div class='card-content description'><p>Состав: Лосось, сыр фетакса, огурец, авакадо</p></div></div></div></div>";
-				contentView += "<div class='food'><div class='col s12 m6'><div class='card'><div class='card-image'><img class='food-img' src='" + files[i].replace('public\\', '') + "'><span class='card-title' style='color: #2196f3'>" + /* menuNames[key] */ ' <br>Файл: ' + nameImg + "</span><a class='btn-floating btn-large halfway-fab waves-effect waves-light red'><i class='material-icons add-food'>add</i></a></div><div class='card-content description'><p>Состав: Лосось, сыр фетакса, огурец, авакадо</p></div></div></div></div>";
+				contentView += "<div class='food'><div class='col s12 m6'><div class='card'><div class='card-image'><img class='food-img' src='" + files[i].replace('public\\', '') + "'><span class='card-title' style='color: #2196f3'>" + /* menuNames[key] */ ' <br>' + /*nameImg +*/ "</span><a class='btn-floating btn-large halfway-fab waves-effect waves-light red'><i class='material-icons add-food'>add</i></a></div><div class='card-content description'><p>Состав: Лосось, сыр фетакса, огурец, авакадо</p></div></div></div></div>";
 			}
 		}
 		//console.log(menuView);
