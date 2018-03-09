@@ -14,24 +14,10 @@ process.on('uncaughtException', (err) => {
 });
 /* *************** Express *************** */
 const express = require("express");
+const menu_titles_1 = require("./menu_titles");
 let app = express();
 /* *************** Express Middleware *************** */
 let gaikan = require('gaikan');
-/* *************** Menu *************** */
-let menuNames = {
-    'rolls': 'Роллы',
-    'sushi': 'Суши',
-    'pizza': 'Пицца',
-    'noodles': 'Лапша',
-    'desserts': 'Десерты',
-    'salads': 'Салаты',
-    'soups': 'Супы',
-    'shashlik': 'Шашлык',
-    'vtoroe': 'Вторые блюда',
-    'garnir': 'Гарнир',
-    'deserti': 'Десерты',
-    'napitki': 'Напитки'
-};
 /* *************** Express Routes *************** */
 app.engine('html', gaikan);
 app.set('view engine', '.html');
@@ -39,45 +25,30 @@ app.set('views', './views');
 app.use(express.static('public'));
 app.get('/:organization', (req, res) => __awaiter(this, void 0, void 0, function* () {
     // console.log('req.organization: ', req.params.organization);
-    if (req.params.organization == 'favicon.ico') {
-        // return console.log('stop.favicon');
+    if (req.params.organization.search('favicon') + 1) {
         return;
     }
     if (!req.params.organization) {
         return res.render('404');
     }
     function renderPage(files) {
-        // console.log('Resolve files: ', files);
-        // if (!files.length) throw new Error('Count find files == 0'); 
-        let item = req.query.item || (files[0] && files[0].split('\\')[3]) || ''; // Для Linux использовать '/' разделитель
+        let currentItem = req.query.item || (files[0] && files[0].split('\\')[3]) || ''; // Для Linux использовать '/' разделитель
         let menu = {};
-        let menuView = '';
-        let contentView = '';
-        //console.log(files);
+        let productImages = [];
         for (let i = 0, len = files.length; i < len; i++) {
-            //console.log(files[i].split('/')[0]);
             let key = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
-            //console.log(key);
             if (!menu[key]) {
-                menu[key] = '1';
-                if (item == key) {
-                    menuView += "<li class='active' style='background-color: #bbdefb'>";
-                }
-                else {
-                    menuView += "<li>";
-                }
-                menuView += "<a href='?item=" + key + "' class='menu-item'>" + (menuNames[key] || key) + "</a></li>";
+                menu[key] = {
+                    active: currentItem == key ? true : false,
+                    title: menu_titles_1.menuTitles[key] || key
+                };
             }
-            // Берем только нужный пункт к примеру [ пицца, роллы, суши ]
-            if (item == key) {
-                let nameImg = files[i].split('\\')[4];
-                let cardGroup = i;
-                contentView += "<div class='food'><div class='col s12 m6'><div class='card'><div class='card-image'><img class='food-img' src='" + files[i].replace('public\\', '') + "'><span class='card-title' style='color: #2196f3'>" + /* menuNames[key] */ ' <br>' + /*nameImg +*/ "</span><a class='btn-floating btn-large halfway-fab waves-effect waves-light red'><i class='material-icons add-food'>add</i></a></div><div class='card-content description'><p>Состав: Лосось, сыр фетакса, огурец, авакадо</p></div></div></div></div>";
+            // Добавляем только нужные товары к примеру только [ пиццу, роллы или лапшу ]
+            if (currentItem == key) {
+                productImages.push(files[i].replace('public\\', ''));
             }
         }
-        //console.log(menuView);
-        //console.log(contentView);
-        res.render('index', { menuView: menuView, item: item, contentView: contentView });
+        res.render('index', { menu: menu, productImages: productImages });
     }
     function renderPage404(err) {
         console.log('renderPage404 Error: ', err);

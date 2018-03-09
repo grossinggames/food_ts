@@ -15,17 +15,44 @@
   </head>
   <body>
     <div id="page" class="main-conteiner">
-
       <div class="nav">
         <div class="nav-left">
           <ul id="slide-out" class="side-nav fixed menu-list">
-            #{root.menuView|decode}
+            <div data-for="value, key of root.menu">
+              @{var active = value.active == true;}
+              @{var item = "?item=" + key;}
+              @{var title = value.title;}
+              <li data-if="active" class="active" style='background-color: #bbdefb'>
+                <a href=#{item} class="menu-item"> #{title}</a>
+              </li>
+              <li data-if="!active">
+                <a href=#{item} class="menu-item"> #{title}</a>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
 
       <div class="center-conteiner">
-        #{root.contentView|decode}
+        <div data-for="value in root.productImages">
+          <div class="food">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image"><img class="food-img" src=#{value}>
+                  <span class="card-title" style="color: #2196f3">
+                    <br>
+                  </span>
+                  <a class="btn-floating btn-large halfway-fab waves-effect waves-light red">
+                    <i class="material-icons add-food">add</i>
+                  </a>
+                </div>
+                <div class="card-content description">
+                  <p>Состав: Лосось, сыр фетакса, огурец, авакадо</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!--Import jQuery before materialize.js-->
@@ -33,8 +60,8 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
-      // var real_height = document.getElementById('page').clientHeight; 
-      // VK.callMethod('resizeWindow',width, real_height); 
+      // var real_height = document.getElementById("page").clientHeight; 
+      // VK.callMethod("resizeWindow",width, real_height); 
     </script>
   </body>
 </html>
