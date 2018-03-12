@@ -15,6 +15,7 @@
   </head>
   <body>
     <div id="page" class="main-conteiner">
+      <!--menu-->
       <div class="nav">
         <div class="nav-left">
           <ul id="slide-out" class="side-nav fixed menu-list">
@@ -32,13 +33,13 @@
           </ul>
         </div>
       </div>
-
+      <!--cards-->
       <div class="center-conteiner">
         <div data-for="value in root.productImages">
           <div class="food">
             <div class="col s12 m6">
               <div class="card">
-                <div class="card-image"><img class="food-img" src=#{value}>
+                <div class="card-image"><img class="food-img" src=#{value.pathImage}>
                   <span class="card-title" style="color: #2196f3">
                     <br>
                   </span>
@@ -46,8 +47,11 @@
                     <i class="material-icons add-food">add</i>
                   </a>
                 </div>
-                <div class="card-content description">
-                  <p>Состав: Лосось, сыр фетакса, огурец, авакадо</p>
+                <div class="card-content">
+                  <span class="card-title">#{value.title}</span>
+                  <div class="description">
+                    <p>#{value.сomposition}</p>
+                  </div>
                 </div>
               </div>
             </div>

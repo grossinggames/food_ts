@@ -1,0 +1,92 @@
+{
+    "deserti": {
+
+    },
+    "garnir": {
+        "kartofel_fri.jpg": {
+            "title": "Картофель фри",
+            "сomposition": "Состав: картофель. масло.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        },
+        "kartofel_po_derevenski.jpg": {
+            "title": "Картофель по деревенски",
+            "сomposition": "Состав: картофель. масло.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        }
+    },
+    "napitki": {
+        
+    },
+    "shashlik": {
+        "myaso_baranina.jpg": {
+            "title": "Шашлык из баранины",
+            "сomposition": "Состав: Баранина.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        },
+        "myaso_koreika.png": {
+            "title": "Шашлык из корейки",
+            "сomposition": "Состав: Корейка.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "myaso_lulya_kebab.jpg": {
+            "title": "Люля кебаб",
+            "сomposition": "Состав: Мясо, лук.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "myaso_svinina.jpg": {
+            "title": "Шашлык из свинины",
+            "сomposition": "Состав: свинина.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "myaso_kurica.jpg": {
+            "title": "Шашлык из курицы",
+            "сomposition": "Состав: Курица, лук, приправа.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "ovoshi_gribi.jpg": {
+            "title": "Шашлык из грибов",
+            "сomposition": "Состав: грибы, лук.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "ovoshi_ovoshi.jpeg": {
+            "title": "Овощи на мангале",
+            "сomposition": "Состав: Овощи.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "riba_dorado.jpg": {
+            "title": "Дорадо",
+            "сomposition": "Состав: Дорадо.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "riba_steik_iz_semgi.jpg": {
+            "title": "Стейк из семги",
+            "сomposition": "Состав: Семга.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        }
+    },
+    "vtoroe": {
+        "medalioni_iz_svinini.jpg": {
+            "title": "Медальоны из свинины",
+            "сomposition": "Состав: Свинина.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "svinina_s_bekonom_i_ovoshami.jpg": {
+            "title": "Свинина с беконом и овощами",
+            "сomposition": "Состав: Свинина, бекон, овощи.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        }
+    }
+}

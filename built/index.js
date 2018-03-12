@@ -14,6 +14,7 @@ process.on('uncaughtException', (err) => {
 });
 /* *************** Express *************** */
 const express = require("express");
+const fs = require("fs");
 const menu_titles_1 = require("./menu_titles");
 let app = express();
 /* *************** Express Middleware *************** */
@@ -31,21 +32,32 @@ app.get('/:organization', (req, res) => __awaiter(this, void 0, void 0, function
     if (!req.params.organization) {
         return res.render('404');
     }
-    function renderPage(files) {
+    function renderPage(files, description) {
         let currentItem = req.query.item || (files[0] && files[0].split('\\')[3]) || ''; // Для Linux использовать '/' разделитель
         let menu = {};
         let productImages = [];
         for (let i = 0, len = files.length; i < len; i++) {
-            let key = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
-            if (!menu[key]) {
-                menu[key] = {
-                    active: currentItem == key ? true : false,
-                    title: menu_titles_1.menuTitles[key] || key
+            let menuItem = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
+            if (!menu[menuItem]) {
+                menu[menuItem] = {
+                    active: currentItem == menuItem ? true : false,
+                    title: menu_titles_1.menuTitles[menuItem] || menuItem
                 };
             }
             // Добавляем только нужные товары к примеру только [ пиццу, роллы или лапшу ]
-            if (currentItem == key) {
-                productImages.push(files[i].replace('public\\', ''));
+            if (currentItem == menuItem) {
+                let nameImage = files[i].split('\\')[4];
+                // console.log('nameImage ', nameImage);
+                // console.log('menuItem ', menuItem);
+                // console.log('description ', description);
+                // console.log('description[menuItem] ', description[menuItem]);
+                // console.log('description[menuItem][nameImage] ', description[menuItem][nameImage]);
+                if (nameImage && description &&
+                    description[menuItem] && description[menuItem][nameImage]) {
+                    description[menuItem][nameImage];
+                    description[menuItem][nameImage].pathImage = files[i].replace('public\\', '');
+                    productImages.push(description[menuItem][nameImage]);
+                }
             }
         }
         res.render('index', { menu: menu, productImages: productImages });
@@ -56,9 +68,23 @@ app.get('/:organization', (req, res) => __awaiter(this, void 0, void 0, function
     }
     try {
         let files = yield getFiles(req.params.organization);
-        renderPage(files);
+        let path = './public/organizations/' + req.params.organization + '/description.json';
+        let description = yield new Promise((resolve) => {
+            fs.readFile(path, 'utf8', function (err, data) {
+                if (err)
+                    throw err;
+                resolve(JSON.parse(data));
+            });
+        });
+        if (description && description) {
+            renderPage(files, description);
+        }
+        else {
+            throw 'Not found menu';
+        }
     }
     catch (err) {
+        console.log(err);
         renderPage404(err);
     }
 }));
