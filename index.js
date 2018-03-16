@@ -5,10 +5,10 @@ process.on('uncaughtException', (err) => {
 });
 
 /* *************** Express *************** */
-import * as express from 'express';
-import * as fs from 'fs';
-import { menuTitles } from './menu_titles';
+const express = require('express');
+const fs = require('fs');
 let app = express();
+
 
 /* *************** Express Middleware *************** */
 let gaikan = require('gaikan');
@@ -18,15 +18,6 @@ app.engine('html', gaikan);
 app.set('view engine', '.html');
 app.set('views', './views');
 app.use(express.static('public'));
-
-interface IProduct {
-	title: string;
-	description: string;
-	price?: number;
-	weight?: number;
-};
-declare type IProducts = { [key: string]: IProduct }
-
 
 app.get('/:organization', async (req, res) => {
 	// console.log('req.organization: ', req.params.organization);
@@ -39,18 +30,17 @@ app.get('/:organization', async (req, res) => {
 		return res.render('404');
 	}
 
-	function renderPage(files: string[], description: any): void {
+	function renderPage(files, description) {
 		let currentItem = req.query.item || (files[0] && files[0].split('\\')[3]) || ''; // Для Linux использовать '/' разделитель
-		let menu:{ [key: string]: {
-			active: boolean,
-			title: string
-		} } = {};
-		let productImages:string[] = [];
+		let menu = {};
+		let productImages = [];
+		const menuTitles = require('./menu_titles').menuTitles;
 
 		for (let i = 0, len = files.length; i < len; i++) {
-			let menuItem:string = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
+			let menuItem = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
 
 			if (!menu[menuItem]) {
+				console.log(menuTitles[menuItem]);
 				menu[menuItem] = {
 					active: currentItem == menuItem? true : false,
 					title: menuTitles[menuItem] || menuItem
@@ -79,17 +69,16 @@ app.get('/:organization', async (req, res) => {
 		res.render('index', { menu: menu, productImages: productImages });
 	}
 
-	function renderPage404(err: Error) {
+	function renderPage404(err) {
 		console.log('renderPage404 Error: ', err);
 		res.render('404');
 	}
 
-	
-
 	try {
-		let files:string[] = await getFiles(req.params.organization);
+		console.log(req.params.organization);
+		let files = await getFiles(req.params.organization);
 		let path = './public/organizations/' + req.params.organization + '/description.json';
-		let description: IProducts = await new Promise<IProducts>((resolve, reject) => {
+		let description = await new Promise((resolve, reject) => {
 			fs.readFile(path, 'utf8', function(err, data) {
 				if (err) return reject(err);
 				resolve( JSON.parse(data) );
@@ -112,16 +101,16 @@ const listener = app.listen(3000, () => {
 });
 
 // ************************* Scandir *************************
-function getFiles(organization:string = '', item:string = ''):Promise<string[]> {
+function getFiles(organization, item) {
 	return new Promise((resolve, reject) => {
 		let scandir = require('scandir').create();
-		let files:string[] = [];
+		let files = [];
 
-		scandir.on('file', (file: string, stats: any) => {
+		scandir.on('file', (file, stats) => {
 			files.push(file);
 		});
 
-		scandir.on('error', (err: Error) => {
+		scandir.on('error', (err) => {
 			reject(err);
 		});
 
@@ -129,8 +118,10 @@ function getFiles(organization:string = '', item:string = ''):Promise<string[]> 
 			resolve(files);
 		});
 
+		console.log('./public/organizations/' + organization);
+
 		scandir.scan({
-			dir: './public/organizations/' + organization + '/' + item,
+			dir: './public/organizations/' + organization,
 			recursive: true,
 			filter: /.png|.jpg|.jpeg/i
 		});

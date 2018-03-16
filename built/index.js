@@ -24,6 +24,7 @@ app.engine('html', gaikan);
 app.set('view engine', '.html');
 app.set('views', './views');
 app.use(express.static('public'));
+;
 app.get('/:organization', (req, res) => __awaiter(this, void 0, void 0, function* () {
     // console.log('req.organization: ', req.params.organization);
     if (req.params.organization.search('favicon') + 1) {
@@ -69,14 +70,14 @@ app.get('/:organization', (req, res) => __awaiter(this, void 0, void 0, function
     try {
         let files = yield getFiles(req.params.organization);
         let path = './public/organizations/' + req.params.organization + '/description.json';
-        let description = yield new Promise((resolve) => {
+        let description = yield new Promise((resolve, reject) => {
             fs.readFile(path, 'utf8', function (err, data) {
                 if (err)
-                    throw err;
+                    return reject(err);
                 resolve(JSON.parse(data));
             });
         });
-        if (description && description) {
+        if (files && description) {
             renderPage(files, description);
         }
         else {
@@ -93,14 +94,14 @@ const listener = app.listen(3000, () => {
 });
 // ************************* Scandir *************************
 function getFiles(organization = '', item = '') {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         let scandir = require('scandir').create();
         let files = [];
         scandir.on('file', (file, stats) => {
             files.push(file);
         });
         scandir.on('error', (err) => {
-            throw err;
+            reject(err);
         });
         scandir.on('end', () => {
             resolve(files);
