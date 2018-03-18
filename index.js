@@ -40,7 +40,6 @@ app.get('/:organization', async (req, res) => {
 			let menuItem = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
 
 			if (!menu[menuItem]) {
-				console.log(menuTitles[menuItem]);
 				menu[menuItem] = {
 					active: currentItem == menuItem? true : false,
 					title: menuTitles[menuItem] || menuItem
@@ -75,7 +74,6 @@ app.get('/:organization', async (req, res) => {
 	}
 
 	try {
-		console.log(req.params.organization);
 		let files = await getFiles(req.params.organization);
 		let path = './public/organizations/' + req.params.organization + '/description.json';
 		let description = await new Promise((resolve, reject) => {
@@ -118,7 +116,7 @@ function getFiles(organization, item) {
 			resolve(files);
 		});
 
-		console.log('./public/organizations/' + organization);
+		// console.log('./public/organizations/' + organization);
 
 		scandir.scan({
 			dir: './public/organizations/' + organization,

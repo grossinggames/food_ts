@@ -20,59 +20,83 @@
         
     },
     "shashlik": {
-        "myaso_baranina.jpg": {
-            "title": "Шашлык из баранины",
-            "сomposition": "Состав: Баранина.",
-            "price": "250 руб.",
-            "weight": "250 гр."
+        "myaso_assorti.jpg": {
+            "title": "Шашлык ассорти на углях",
+            "сomposition": "Баранина, свинина, картофель, люля-кебаб, грибы, лук репчатый.",
+            "price": "1700 руб.",
+            "weight": "1кг."
         },
-        "myaso_koreika.png": {
-            "title": "Шашлык из корейки",
-            "сomposition": "Состав: Корейка.",
-            "price": "350 руб.",
-            "weight": "350 гр."
+        "myaso_baranina_na_kosti.jpg": {
+            "title": "Шашлык из баранины на кости",
+            "сomposition": "Баранина",
+            "price": "180 руб.",
+            "weight": "100 гр."
         },
-        "myaso_lulya_kebab.jpg": {
-            "title": "Люля кебаб",
-            "сomposition": "Состав: Мясо, лук.",
-            "price": "350 руб.",
-            "weight": "350 гр."
+        "myaso_baranina_lulya_kebab.jpg": {
+            "title": "Люля кебаб из баранины",
+            "сomposition": "Баранина, лук.",
+            "price": "180 руб.",
+            "weight": "100 гр."
         },
-        "myaso_svinina.jpg": {
-            "title": "Шашлык из свинины",
-            "сomposition": "Состав: свинина.",
-            "price": "350 руб.",
-            "weight": "350 гр."
+        "myaso_goviadina_basturma.jpg": {
+            "title": "Бастурма из говядины",
+            "сomposition": "Говядина.",
+            "price": "200 руб.",
+            "weight": "100 гр."
         },
-        "myaso_kurica.jpg": {
-            "title": "Шашлык из курицы",
-            "сomposition": "Состав: Курица, лук, приправа.",
-            "price": "350 руб.",
-            "weight": "350 гр."
+        "myaso_svinina_sheya.jpg": {
+            "title": "Шашлык из свиной шеи",
+            "сomposition": "Свинина.",
+            "price": "170 руб.",
+            "weight": "100 гр."
         },
-        "ovoshi_gribi.jpg": {
-            "title": "Шашлык из грибов",
-            "сomposition": "Состав: грибы, лук.",
-            "price": "350 руб.",
-            "weight": "350 гр."
-        },
-        "ovoshi_ovoshi.jpeg": {
-            "title": "Овощи на мангале",
-            "сomposition": "Состав: Овощи.",
-            "price": "350 руб.",
-            "weight": "350 гр."
-        },
-        "riba_dorado.jpg": {
-            "title": "Дорадо",
-            "сomposition": "Состав: Дорадо.",
+        "myaso_svinina_koreika.jpg": {
+            "title": "Шашлык из свиной корейки",
+            "сomposition": "Свинина.",
             "price": "350 руб.",
             "weight": "350 гр."
         },
         "riba_steik_iz_semgi.jpg": {
             "title": "Стейк из семги",
-            "сomposition": "Состав: Семга.",
-            "price": "350 руб.",
-            "weight": "350 гр."
+            "сomposition": "Семга.",
+            "price": "250 руб.",
+            "weight": "100 гр."
+        },
+        "riba_dorado_na_mangale.jpg": {
+            "title": "Дорадо на мангале",
+            "сomposition": "Дорадо.",
+            "price": "200 руб.",
+            "weight": "100 гр."
+        },
+        "ptica_kurinie_krilishki.jpg": {
+            "title": "Шашлык из куриных крылышек",
+            "сomposition": "Куриные крылышки.",
+            "price": "100 руб.",
+            "weight": "100 гр."
+        },
+        "ptica_kurinoe_file_ciplenka.jpg": {
+            "title": "Шашлык из филе цыпленка",
+            "сomposition": "Филе цыпленка.",
+            "price": "120 руб.",
+            "weight": "100 гр."
+        },
+        "ovoshi_kartofel.jpg": {
+            "title": "Шашлык из картофеля",
+            "сomposition": "Картофель.",
+            "price": "70 руб.",
+            "weight": "100 гр."
+        },
+        "ovoshi_gribi_shampinoni.jpg": {
+            "title": "Шашлык из грибов шампиньонов",
+            "сomposition": "Шампиньоны.",
+            "price": "180 руб.",
+            "weight": "100 гр."
+        },
+        "ovoshi_ovoshi.jpeg": {
+            "title": "Овощи на мангале",
+            "сomposition": "Томат, баклажан, перец, кабачок.",
+            "price": "150 руб.",
+            "weight": "100 гр."
         }
     },
     "vtoroe": {
