@@ -5,10 +5,13 @@ exports.menuTitles = {
 	'noodles': 'Лапша',
 	'desserts': 'Десерты',
 	'salads': 'Салаты',
+	'salati': 'Салаты',
 	'soups': 'Супы',
-	'shashlik': 'Шашлык',
+	'bluda_na_grile': 'Блюда на гриле',
 	'vtoroe': 'Вторые блюда',
 	'garnir': 'Гарнир',
 	'deserti': 'Десерты',
-	'napitki': 'Напитки'
+	'napitki': 'Напитки',
+	'soysi': 'Соусы',
+	'hleb': 'Хлеб',
 };

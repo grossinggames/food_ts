@@ -39,7 +39,7 @@ app.get('/:organization', async (req, res) => {
 		for (let i = 0, len = files.length; i < len; i++) {
 			let menuItem = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
 
-			if (!menu[menuItem]) {
+			if ( !menu[menuItem] && (menuItem != 'logo.jpg' || menuItem != 'logo.png') ) {
 				menu[menuItem] = {
 					active: currentItem == menuItem? true : false,
 					title: menuTitles[menuItem] || menuItem

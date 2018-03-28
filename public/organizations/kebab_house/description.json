@@ -1,25 +1,112 @@
 {
     "deserti": {
-
+        "yablochni_shtrudel.jpg": {
+            "title": "Штрудель яблочный с мороженным",
+            "сomposition": ""
+        },
+        "vishnevi_shtrudel.jpg": {
+            "title": "Штрудель вишневый с мороженным",
+            "сomposition": ""
+        },
+        "tiramisu.jpg": {
+            "title": "Тирамису",
+            "сomposition": ""
+        },
+        "chizkeik_po_americanski.jpg": {
+            "title": "Чизкейк по американски",
+            "сomposition": ""
+        },
+        "sirop_chokolate.jpg": {
+            "title": "Сироп шоколадный",
+            "сomposition": ""
+        },
+        "sirop_karamel.jpg": {
+            "title": "Сироп карамельный",
+            "сomposition": ""
+        },
+        "sirop_klubnika.jpg": {
+            "title": "Сироп клубника",
+            "сomposition": ""
+        }
     },
     "garnir": {
         "kartofel_fri.jpg": {
             "title": "Картофель фри",
-            "сomposition": "Состав: картофель. масло.",
+            "сomposition": "Картофель.",
             "price": "250 руб.",
             "weight": "250 гр."
         },
         "kartofel_po_derevenski.jpg": {
             "title": "Картофель по деревенски",
-            "сomposition": "Состав: картофель. масло.",
+            "сomposition": "Картофель.",
             "price": "250 руб.",
             "weight": "250 гр."
+        },
+        "kartofel_draniki_so_smetanoi.jpg": {
+            "title": "Картофельные драники со сметаной",
+            "сomposition": "Картофель, сметана.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        },
+        "ris_s_ovoshiami.jpg": {
+            "title": "Рис с овощами",
+            "сomposition": "Рис, кукуруза консервированная, перец болгарский.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        },
+        "kartofel_s_sirom_i_pomidorami.jpg": {
+            "title": "Картофель с сыром и помидоркой",
+            "сomposition": "Картофель запеченный, сыр, помидоры.",
+            "price": "250 руб.",
+            "weight": "250 гр."
+        }
+    },
+    "soysi": {
+        "adjika.jpg": {
+            "title": "Аджика",
+            "сomposition": ""
+        },
+        "cezar.jpg": {
+            "title": "Соус Цезарь",
+            "сomposition": ""
+        },
+        "chesnochni.jpg": {
+            "title": "Чесночный соус",
+            "сomposition": ""
+        },
+        "gorchica.jpg": {
+            "title": "Горчица",
+            "сomposition": ""
+        },
+        "hren.jpg": {
+            "title": "Хреновый соус",
+            "сomposition": ""
+        },
+        "ketchup.jpg": {
+            "title": "Кетчуп",
+            "сomposition": ""
+        },
+        "maionez.jpg": {
+            "title": "Майонез",
+            "сomposition": ""
+        },
+        "narshabat.jpg": {
+            "title": "Наршараб.",
+            "сomposition": "Гранатовый соус."
+        },
+        "sirni.jpg": {
+            "title": "Сырный соус",
+            "сomposition": ""
+        },
+        "smetana.jpg": {
+            "title": "Сметана",
+            "сomposition": ""
         }
     },
     "napitki": {
         
     },
-    "shashlik": {
+    "bluda_na_grile": {
         "myaso_assorti.jpg": {
             "title": "Шашлык ассорти на углях",
             "сomposition": "Баранина, свинина, картофель, люля-кебаб, грибы, лук репчатый.",
@@ -100,17 +187,125 @@
         }
     },
     "vtoroe": {
-        "medalioni_iz_svinini.jpg": {
+        "gorbusha_pod_shapkoi.jpg": {
+            "title": "Горбуша под шапкой",
+            "сomposition": "Горбуша, лук, шампиньоны, сыр, майонез.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "goviadina_s_tomatami.jpg": {
+            "title": "Говядина с томатами",
+            "сomposition": "Говядина, помидоры, лук репч., сыр, майонез.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "govyadina_s_vinogradom.jpg": {
+            "title": "Говядина с виноградом",
+            "сomposition": "говядина, виноград, сыр, зелень, майонез.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "kurinoe_file_zapechenoe_s_sirom_i_pomidorami.jpg": {
+            "title": "Куриное филе с сыром и помидорой",
+            "сomposition": "Куриное филе, помидоры, сыр, зелень.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "medalioni_iz_svinini_v_gribnom_soyse.jpg": {
             "title": "Медальоны из свинины",
-            "сomposition": "Состав: Свинина.",
+            "сomposition": "Свинина, сливки, шампиньоны.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "myaso_po_francuski.png": {
+            "title": "Мясо по-французски",
+            "сomposition": "Свинина, шампиньоны, помидоры, лук реп., картофель, сыр, майонез, зелень.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "pasta_karbonara.jpg": {
+            "title": "Паста «Карбонара»",
+            "сomposition": "Паста.",
             "price": "350 руб.",
             "weight": "350 гр."
         },
         "svinina_s_bekonom_i_ovoshami.jpg": {
             "title": "Свинина с беконом и овощами",
-            "сomposition": "Состав: Свинина, бекон, овощи.",
+            "сomposition": "Свинина, перец бол., лук реп., копчености, сыр, майонез.",
             "price": "350 руб.",
             "weight": "350 гр."
+        },
+        "svinina_s_gribami_i_pomidorami.jpg": {
+            "title": "Свинина с грибами и помидорой",
+            "сomposition": "Свинина, помидоры, шампиньоны, сыр, зелень, майонез.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        },
+        "yazik_v_orehovoy_zalivke.jpg": {
+            "title": "Язык в ореховой заливке",
+            "сomposition": "Язык, картофель, сливки, сметана, орехи грецкие, зелень.",
+            "price": "350 руб.",
+            "weight": "350 гр."
+        }
+    },
+    "salati": {
+        "cezar_s_krevetkami.jpg": {
+            "title": "Цезарь с креветками",
+            "сomposition": "Cалат Айсберг, гренки, креветки, томаты Черри, сыр, соус."
+        },
+        "cezar_s_kuritsey.jpg": {
+            "title": "Цезарь с курицей",
+            "сomposition": "Cалат Айсберг, филе куриное, гренки, соус «Цезар», томаты Черри, сыр Пармезан."
+        },
+        "firmeni.jpeg": {
+            "title": "Салат Фирменный",
+            "сomposition": "Язык говяжий, филе куриное, шампиньоны, томаты, перец, кукуруза, зелень, майонез."
+        },
+        "grecheski.jpg": {
+            "title": "Салат Греческий",
+            "сomposition": "Томаты свежие, огурцы свежие, листья салата, перец болгарский, маслины, оливки, соус, сыр фета, лук красный."
+        },
+        "kalmar_s_ovoshami.jpg": {
+            "title": "Кальмар с овощами",
+            "сomposition": "Кальмары, огурец свежий, яйцо, горошек консер.,морковь, лук порей, майонез."
+        },
+        "morskoi_briz.jpg": {
+            "title": "Салат Морской бриз",
+            "сomposition": "Кальмары, креветки, перец, лук порей, соевый соус, заправка."
+        },
+        "myasnoi_s_ovoshami.jpg": {
+            "title": "Мясной с овощами",
+            "сomposition": "Говядина, томаты, перец св, салат айсберг, лук порей, заправка масленая, зелень."
+        },
+        "ovoshnoi_mix.png": {
+            "title": "Овощной микс",
+            "сomposition": "Cалат Айсберг, перец св, огурец св, томаты черри, лук шалот, масло растительное, зелень."
+        },
+        "salat_korolevski.jpg": {
+            "title": "Салат Королевский",
+            "сomposition": "Кальмары, креветки, томаты, сыр, кукуруза, зелень, майонез."
+        },
+        "sitni.jpg": {
+            "title": "Салат Сытный",
+            "сomposition": "Говядина, язык говяд., огурцы св., корнишоны, сыр, зелень, майонез."
+        }
+    },
+    "hleb": {
+        "hleb_phenichni.jpg": {
+            "title": "Хлеб пшеничный",
+            "сomposition": ""
+        },
+        "hleb_rshanoi.jpg": {
+            "title": "Хлеб ржаной",
+            "сomposition": ""
+        },
+        "lavash.png": {
+            "title": "Лаваш",
+            "сomposition": ""
+        },
+        "lepeshka.jpg": {
+            "title": "Лепешка",
+            "сomposition": ""
         }
     }
 }
