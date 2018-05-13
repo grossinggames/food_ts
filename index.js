@@ -39,7 +39,7 @@ app.get('/:organization', async (req, res) => {
 		for (let i = 0, len = files.length; i < len; i++) {
 			let menuItem = files[i].split('\\')[3]; // Для Linux использовать '/' разделитель
 
-			if ( !menu[menuItem] && (menuItem != 'logo.jpg' || menuItem != 'logo.png') ) {
+			if ( !menu[menuItem] && (menuItem != 'logo.jpg' && menuItem != 'logo.png') ) {
 				menu[menuItem] = {
 					active: currentItem == menuItem? true : false,
 					title: menuTitles[menuItem] || menuItem
@@ -126,13 +126,12 @@ function getFiles(organization, item) {
 	});
 }
 
-
 /*
-Нет бастурмы
-Овощи на мангале цельные либо пополам. Помидрка перец цельная , баклажан - попалам
-шашлык из филе ципл- плоские длинные.
-тирамису - продолговатый
-штрудель вишневый побольше как яблочный (рулет)
++ Нет бастурмы
++ (2 фото) Овощи на мангале цельные либо пополам. Помидрка перец цельная , баклажан - попалам
++ шашлык из филе ципл- плоские длинные.
++ тирамису - продолговатый
++ штрудель вишневый побольше как яблочный (рулет)
 драники со сметаной - треугольниками.
 рис с овощами - нет горошка.
 салат фирменный с кукурузой 

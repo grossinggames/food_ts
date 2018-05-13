@@ -8,7 +8,7 @@
             "title": "Штрудель вишневый с мороженным",
             "сomposition": ""
         },
-        "tiramisu.jpg": {
+        "tiramisu.jpeg": {
             "title": "Тирамису",
             "сomposition": ""
         },
@@ -125,12 +125,6 @@
             "price": "180 руб.",
             "weight": "100 гр."
         },
-        "myaso_goviadina_basturma.jpg": {
-            "title": "Бастурма из говядины",
-            "сomposition": "Говядина.",
-            "price": "200 руб.",
-            "weight": "100 гр."
-        },
         "myaso_svinina_sheya.jpg": {
             "title": "Шашлык из свиной шеи",
             "сomposition": "Свинина.",
@@ -179,7 +173,13 @@
             "price": "180 руб.",
             "weight": "100 гр."
         },
-        "ovoshi_ovoshi.jpeg": {
+        "ovoshi_ovoshi.jpg": {
+            "title": "Овощи на мангале",
+            "сomposition": "Томат, баклажан, перец, кабачок.",
+            "price": "150 руб.",
+            "weight": "100 гр."
+        },
+        "ovoshi_ovoshi2.jpg": {
             "title": "Овощи на мангале",
             "сomposition": "Томат, баклажан, перец, кабачок.",
             "price": "150 руб.",
